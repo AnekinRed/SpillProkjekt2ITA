@@ -13,7 +13,7 @@ const background = new Sprite({
     x: 0,
     y: 0
   },
-  imageSrc: './img/background.png'
+  imageSrc: './Media/Background/background.png'
 });
 
 const player = new Fighter({
@@ -29,7 +29,7 @@ const player = new Fighter({
     x: 0,
     y: 0
   },
-  imageSrc: './img/samuraiMack/Idle.png',
+  imageSrc: './Media/Player/Color1/Outline/120x80_PNGSheets/_Idle.png',
   framesMax: 8,
   scale: 2.5,
   offset: {
@@ -38,31 +38,31 @@ const player = new Fighter({
   },
   sprites: {
     idle: {
-      imageSrc: './img/samuraiMack/Idle.png',
+      imageSrc: './Media/Player/Color1/Outline/120x80_PNGSheets/_Idle.png',
       framesMax: 8
     },
     run: {
-      imageSrc: './img/samuraiMack/Run.png',
+      imageSrc: './Media/Player/Color1/Outline/120x80_PNGSheets/_Run.png',
       framesMax: 8
     },
     jump: {
-      imageSrc: './img/samuraiMack/Jump.png',
+      imageSrc: './Media/Player/Color1/Outline/120x80_PNGSheets/_Jump.png',
       framesMax: 2
     },
     fall: {
-      imageSrc: './img/samuraiMack/Fall.png',
+      imageSrc: './Media/Player/Color1/Outline/120x80_PNGSheets/_Fall.png',
       framesMax: 2
     },
     attack1: {
-      imageSrc: './img/samuraiMack/Attack1.png',
+      imageSrc: './Media/Player/Color1/Outline/120x80_PNGSheets/_Attack.png',
       framesMax: 6
     },
     takeHit: {
-      imageSrc: './img/samuraiMack/Take Hit - white silhouette.png',
+      imageSrc: './Media/Player/Color1/Outline/120x80_PNGSheets/_Hit.png',
       framesMax: 4
     },
     death: {
-      imageSrc: './img/samuraiMack/Death.png',
+      imageSrc: './Media/Player/Color1/Outline/120x80_PNGSheets/_Death.png',
       framesMax: 6
     }
   },
