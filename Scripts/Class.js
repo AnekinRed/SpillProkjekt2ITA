@@ -130,6 +130,11 @@ class Fighter extends Sprite {
     this.isAttacking = true
   }
 
+  attack2() {
+    this.switchSprite('attack2')
+    this.isAttacking = true
+  }
+
   takeHit() {
     this.health -= 20
 
@@ -149,6 +154,12 @@ class Fighter extends Sprite {
     if (
       this.image === this.sprites.attack1.image &&
       this.framesCurrent < this.sprites.attack1.framesMax - 1
+    )
+      return
+
+    if (
+      this.image === this.sprites.attack2.image &&
+      this.framesCurrent < this.sprites.attack2.framesMax - 1
     )
       return
 
@@ -204,6 +215,15 @@ class Fighter extends Sprite {
           this.framesCurrent = 0
         }
         break
+
+      case 'attack2':
+        if (this.image !== this.sprites.attack2.image) {
+          this.image = this.sprites.attack2.image
+          this.framesMax = this.sprites.attack2.framesMax
+          this.framesCurrent = 0
+          }
+      break
+  
 
       case 'takeHit':
         if (this.image !== this.sprites.takeHit.image) {

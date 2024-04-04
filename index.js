@@ -61,6 +61,10 @@ const player = new Fighter({
             imageSrc: './Media/Player/Attack1.png',
             framesMax: 4
         },
+        attack2: {
+          imageSrc: './Media/Player/Attack2.png',
+          framesMax: 6
+      },
         takeHit: {
             imageSrc: './img/samuraiMack/Take Hit - white silhouette.png',
             framesMax: 4
@@ -118,7 +122,11 @@ function animate() {
     } else if (keys.d.pressed && player.lastKey === 'd') {
         player.velocity.x = 3;
         player.switchSprite('run');
-    } else {
+    } else if (keys.s.pressed && player.lastKey === 's') {
+      player.velocity.x = 0;
+      player.switchSprite('duck');
+    }
+    else {
         player.switchSprite('idle');
     }
 
@@ -150,8 +158,15 @@ window.addEventListener('keydown', (event) => {
                     lastJumpTime = currentTime; // Update the last jump time
                 }
                 break;
+            case 's':
+              keys.s.pressed =true;
+              player.lastKey = 's'
+              break;
             case ' ':
                 player.attack();
+                break;
+            case 'o':
+                player.attack2();
                 break;
         }
     }
