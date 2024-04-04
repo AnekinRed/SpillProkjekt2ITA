@@ -29,7 +29,7 @@ const player = new Fighter({
         x: 0,
         y: 0
     },
-    imageSrc: './img/samuraiMack/Idle.png',
+    imageSrc: './Media/Player/Idle.png',
     framesMax: 10,
     scale: 2,
     offset: {
@@ -38,27 +38,27 @@ const player = new Fighter({
     },
     sprites: {
         idle: {
-            imageSrc: './img/samuraiMack/Idle.png',
+            imageSrc: './Media/Player/Idle.png',
             framesMax: 10
         },
         run: {
-            imageSrc: './img/samuraiMack/Run.png',
+            imageSrc: './Media/Player/Run.png',
             framesMax: 10
         },
         runBack: {
-            imageSrc: './img/samuraiMack/RunBack.png',
+            imageSrc: './Media/Player/RunBack.png',
             framesMax: 10
         },
         jump: {
-            imageSrc: './img/samuraiMack/Jump.png',
+            imageSrc: './Media/Player/Jump.png',
             framesMax: 3
         },
         fall: {
-            imageSrc: './img/samuraiMack/Fall.png',
+            imageSrc: './Media/Player/Fall.png',
             framesMax: 3
         },
         attack1: {
-            imageSrc: './img/samuraiMack/Attack1.png',
+            imageSrc: './Media/Player/Attack1.png',
             framesMax: 4
         },
         takeHit: {
@@ -66,7 +66,7 @@ const player = new Fighter({
             framesMax: 4
         },
         death: {
-            imageSrc: './img/samuraiMack/Death.png',
+            imageSrc: './Media/Player/Death.png',
             framesMax: 10
         }
     },
