@@ -72,7 +72,11 @@ const player = new Fighter({
         death: {
             imageSrc: './Media/Player/Death.png',
             framesMax: 10
-        }
+        },
+        duck: {
+          imageSrc: './Media/Player/Duck.png',
+          framesMax: 1
+        },
     },
     attackBox: {
         offset: {
@@ -93,12 +97,9 @@ const keys = {
     d: {
         pressed: false
     },
-    ArrowRight: {
-        pressed: false
+    s: {
+      pressed: false
     },
-    ArrowLeft: {
-        pressed: false
-    }
 };
 
 let lastJumpTime = 0; // Variable to track the time of the last jump
@@ -123,7 +124,6 @@ function animate() {
         player.velocity.x = 3;
         player.switchSprite('run');
     } else if (keys.s.pressed && player.lastKey === 's') {
-      player.velocity.x = 0;
       player.switchSprite('duck');
     }
     else {
@@ -180,5 +180,8 @@ window.addEventListener('keyup', (event) => {
         case 'a':
             keys.a.pressed = false;
             break;
+        case 's':
+          keys.s.pressed = false;
+          break;
     }
 });

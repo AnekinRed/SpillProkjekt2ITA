@@ -223,7 +223,13 @@ class Fighter extends Sprite {
           this.framesCurrent = 0
           }
       break
-  
+
+      case 'duck':
+        if (this.image !== this.sprites.duck.image) {
+          this.image = this.sprites.duck.image
+          this.framesMax = this.sprites.duck.image
+          this.framesCurrent = 0
+        }
 
       case 'takeHit':
         if (this.image !== this.sprites.takeHit.image) {
