@@ -24,12 +24,11 @@ const player = new Fighter({
   velocity: {
     x: 0,
     y: 0
-  },
-  offset: {
+    offset: 0,
     x: 0,
     y: 0
-  },
-  imageSrc: './Media/Player/Color1/Outline/120x80_PNGSheets/_Idle.png',
+  },                                                                              
+  imageSrc: './Media/Player/Colour2/Outline/120x80_PNGSheets/_Idle.png',
   framesMax: 8,
   scale: 2.5,
   offset: {
