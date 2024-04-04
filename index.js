@@ -75,7 +75,7 @@ const player = new Fighter({
         },
         duck: {
           imageSrc: './Media/Player/Duck.png',
-          framesMax: 1
+          framesMax: 3
         },
     },
     attackBox: {

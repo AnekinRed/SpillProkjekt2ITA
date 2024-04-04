@@ -100,30 +100,40 @@ class Fighter extends Sprite {
   }
 
   update() {
-    this.draw()
-    if (!this.dead) this.animateFrames()
+    this.draw();
+    if (!this.dead) this.animateFrames();
 
-    // attack boxes
-    this.attackBox.position.x = this.position.x + this.attackBox.offset.x
-    this.attackBox.position.y = this.position.y + this.attackBox.offset.y
+    // Attack boxes
+    this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
+    this.attackBox.position.y = this.position.y + this.attackBox.offset.y;
 
-    // draw the attack box
+    // Draw the attack box
     // c.fillRect(
-    //   this.attackBox.position.x,
-    //   this.attackBox.position.y,
-    //   this.attackBox.width,
-    //   this.attackBox.height
-    // )
+    //     this.attackBox.position.x,
+    //     this.attackBox.position.y,
+    //     this.attackBox.width,
+    //     this.attackBox.height
+    // );
 
-    this.position.x += this.velocity.x
-    this.position.y += this.velocity.y
+    this.position.x += this.velocity.x;
+    this.position.y += this.velocity.y;
 
-    // gravity function
+    // Gravity function
     if (this.position.y + this.height + this.velocity.y >= canvas.height - 96) {
-      this.velocity.y = 0
-      this.position.y = 330
-    } else this.velocity.y += gravity
-  }
+        this.velocity.y = 0;
+        this.position.y = 330;
+    } else this.velocity.y += gravity;
+
+    // Handle duck sprite
+    if (this.image === this.sprites.duck.image) {
+        // Logic for duck sprite
+        // For example:
+        // if (this.framesCurrent === this.sprites.duck.framesMax - 1) {
+        //     // Reached end of duck animation, switch to idle or other appropriate sprite
+        //     this.switchSprite('idle');
+        // }
+    }
+}
 
   attack() {
     this.switchSprite('attack1')
