@@ -1,0 +1,11 @@
+spec sheet for player moveset.
+
+Idle{10 frame looping idle animation}
+Run/RunBack{on keyhold set x velocity to 3/-3 respectively, loop 10 frames of respective animations}
+Duck{on keyhold set x velocity to 0, loop 1 frame animation, reduce hurtbox size to match sprite}
+Jump/Fall{on keypress set y velocity to -10 + gravity function, if y velocity is < 0 loop 3 frame jump animation if y velocity is > 0 loop 3 frame fall animation}
+Death{on 0 hp play 10 frame death animation, respawn at last checkpoint}
+Attack{on keypress play respective attack animation depending on which direction player is facing, draw hitbox on frame 2 of animation, on hit deals 1 damage gain 1/3 mana bar}
+Fireball{on keypress play respective attack2 animation depending on which direction player is facing, instatiate fireball projectile in front of player, on hit deals 3 damage, costs 1 bar of mana}
+Heal{if hp is < 5 and x and y velocity = 0 on keyhold every 30 frames spend 1 full mana bar gain 1 hp, play looping animation (Eliot creates animation based on idle animation another day)}
+onhit{take respective damage, play hit animation, stagger player for duration of animation}
