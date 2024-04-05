@@ -73,11 +73,8 @@ const player = new Fighter({
             imageSrc: './Media/Player/Death.png',
             framesMax: 10
         },
-        duck: {
-          imageSrc: './Media/Player/Duck.png',
-          framesMax: 3
-        },
     },
+    
     attackBox: {
         offset: {
             x: 100,

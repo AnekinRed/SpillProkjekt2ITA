@@ -107,14 +107,6 @@ class Fighter extends Sprite {
     this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
     this.attackBox.position.y = this.position.y + this.attackBox.offset.y;
 
-    // Draw the attack box
-    // c.fillRect(
-    //     this.attackBox.position.x,
-    //     this.attackBox.position.y,
-    //     this.attackBox.width,
-    //     this.attackBox.height
-    // );
-
     this.position.x += this.velocity.x;
     this.position.y += this.velocity.y;
 
@@ -123,16 +115,6 @@ class Fighter extends Sprite {
         this.velocity.y = 0;
         this.position.y = 330;
     } else this.velocity.y += gravity;
-
-    // Handle duck sprite
-    if (this.image === this.sprites.duck.image) {
-        // Logic for duck sprite
-        // For example:
-        // if (this.framesCurrent === this.sprites.duck.framesMax - 1) {
-        //     // Reached end of duck animation, switch to idle or other appropriate sprite
-        //     this.switchSprite('idle');
-        // }
-    }
 }
 
   attack() {
@@ -233,13 +215,6 @@ class Fighter extends Sprite {
           this.framesCurrent = 0
           }
       break
-
-      case 'duck':
-        if (this.image !== this.sprites.duck.image) {
-          this.image = this.sprites.duck.image
-          this.framesMax = this.sprites.duck.image
-          this.framesCurrent = 0
-        }
 
       case 'takeHit':
         if (this.image !== this.sprites.takeHit.image) {
