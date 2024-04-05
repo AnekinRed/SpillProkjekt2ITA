@@ -6,7 +6,7 @@ canvas.height = 576;
 
 c.fillRect(0, 0, canvas.width, canvas.height);
 
-const gravity = 0.7;
+const gravity = 0.25;
 
 const background = new Sprite({
     position: {
@@ -156,10 +156,10 @@ window.addEventListener('keydown', (event) => {
                 keys.a.pressed = true;
                 player.lastKey = 'a';
                 break;
-            case 'w':
+            case ' ':
                 const currentTime = new Date().getTime();
                 if ((currentTime - lastJumpTime) >= 400) { // Check if at least one second has passed since the last jump
-                    player.velocity.y = -15;
+                    player.velocity.y = -10;
                     lastJumpTime = currentTime; // Update the last jump time
                 }
                 break;
@@ -167,7 +167,7 @@ window.addEventListener('keydown', (event) => {
               keys.s.pressed =true;
               player.lastKey = 's'
               break;
-            case ' ':
+            case 'i':
                 player.attack();
                 break;
             case 'o':
