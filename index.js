@@ -13,7 +13,8 @@ const background = new Sprite({
         x: 0,
         y: 0
     },
-    imageSrc: './Media/Background/background.png'
+    imageSrc: './Media/Background/background.png',
+    framesMax: 5,
 });
 
 const player = new Fighter({
@@ -31,10 +32,10 @@ const player = new Fighter({
     },
     imageSrc: './Media/Player/Idle.png',
     framesMax: 10,
-    scale: 2,
+    scale: 2.5,
     offset: {
-        x: 70,
-        y: 10,
+        x: 80,
+        y: 50,
     },
     sprites: {
         idle: {
@@ -101,19 +102,20 @@ const keys = {
 
 let lastJumpTime = 0; // Variable to track the time of the last jump
 
-function animate() {
-    window.requestAnimationFrame(animate);
+function animateBackground() {
     c.fillStyle = 'black';
     c.fillRect(0, 0, canvas.width, canvas.height);
     background.update();
     c.fillStyle = 'rgba(255, 255, 255, 0.15)';
     c.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+function animatePlayer() {
     player.update();
 
     player.velocity.x = 0;
 
-    // player movement
-
+    
     if (keys.a.pressed && player.lastKey === 'a') {
         player.velocity.x = -3;
         player.switchSprite('runBack');
@@ -121,18 +123,24 @@ function animate() {
         player.velocity.x = 3;
         player.switchSprite('run');
     } else if (keys.s.pressed && player.lastKey === 's') {
-      player.switchSprite('duck');
-    }
-    else {
+        player.switchSprite('duck');
+    } else {
         player.switchSprite('idle');
     }
 
-    // jumping
+    
     if (player.velocity.y < 0) {
         player.switchSprite('jump');
     } else if (player.velocity.y > 0) {
         player.switchSprite('fall');
     }
+}
+
+function animate() {
+    window.requestAnimationFrame(animate);
+
+    animateBackground();
+    animatePlayer();
 }
 
 animate();
