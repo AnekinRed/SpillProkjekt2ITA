@@ -34,7 +34,7 @@ const player = new Fighter({
     framesMax: 10,
     scale: 2.5,
     offset: {
-        x: 80,
+        x: 70,
         y: 50,
     },
     sprites: {
@@ -102,6 +102,7 @@ const keys = {
 
 let lastJumpTime = 0; // Variable to track the time of the last jump
 
+// Animation function for the background
 function animateBackground() {
     c.fillStyle = 'black';
     c.fillRect(0, 0, canvas.width, canvas.height);
@@ -110,12 +111,13 @@ function animateBackground() {
     c.fillRect(0, 0, canvas.width, canvas.height);
 }
 
+// Animation function for the player
 function animatePlayer() {
     player.update();
 
     player.velocity.x = 0;
 
-    
+    // player movement
     if (keys.a.pressed && player.lastKey === 'a') {
         player.velocity.x = -3;
         player.switchSprite('runBack');
@@ -128,7 +130,7 @@ function animatePlayer() {
         player.switchSprite('idle');
     }
 
-    
+    // jumping
     if (player.velocity.y < 0) {
         player.switchSprite('jump');
     } else if (player.velocity.y > 0) {
@@ -136,6 +138,7 @@ function animatePlayer() {
     }
 }
 
+// Combined animation function
 function animate() {
     window.requestAnimationFrame(animate);
 
