@@ -440,4 +440,4 @@ window.addEventListener('keyup', (event) => {
           keys.s.pressed = false;
           break;
     }
-});
+})
