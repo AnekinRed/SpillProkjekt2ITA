@@ -8,3 +8,6 @@ Attack{on keypress play respective attack animation depending on which direction
 Fireball{on keypress play respective attack2 animation depending on which direction player is facing, instatiate fireball projectile in front of player, on hit deals 2 damage, costs 1 bar of mana}
 Heal{if hp is < 5 and x and y velocity = 0 on keyhold every 30 frames spend 1 full mana bar gain 1 hp, play looping animation (Eliot creates animation based on idle animation another day)}
 onhit{take respective damage, play hit animation, stagger player for duration of animation}
+
+
+2ZVXC1PBB543AZAMP0UF
