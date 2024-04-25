@@ -428,16 +428,18 @@ window.addEventListener('keydown', (event) => {
     }
 });
 
-window.addEventListener('keyup', (event) => {
-    switch (event.key) {
-        case 'd':
-            keys.d.pressed = false;
-            break;
-        case 'a':
-            keys.a.pressed = false;
-            break;
-        case 's':
-          keys.s.pressed = false;
-          break;
-    }
-})
+    window.addEventListener('keyup', (event) => {
+        switch (event.key) {
+            case 'd':
+                keys.d.pressed = false;
+                break;
+            case 'a':
+                keys.a.pressed = false;
+                break;
+            case 's':
+            keys.s.pressed = false;
+              break;
+            }
+        }
+    )
+}
